@@ -1,0 +1,289 @@
+/* ==========================================================================
+   VARIABLES CORPORATIVAS Y REESTABLECIMIENTO
+   ========================================================================== */
+:root {
+    --azul-marino: #0A2540;
+    --azul-hover: #10355A;
+    --azul-celeste: #E6F0FA;
+    --gris-concreto-fondo: #F4F6F8;
+    --gris-concreto-borde: #D2D7DF;
+    --gris-texto: #4A5568;
+    --blanco-puro: #FFFFFF;
+    --fuente-sistema: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-sistema);
+    background-color: var(--gris-concreto-fondo);
+    color: var(--azul-marino);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.header-taller {
+    width: 100%;
+    background-color: var(--blanco-puro);
+}
+
+.header-taller .nivel-superior {
+    background-color: var(--azul-marino);
+    color: var(--gris-concreto-fondo);
+    font-size: 0.8rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-taller .nivel-inferior {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gris-concreto-borde);
+}
+
+.header-taller .logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.header-taller .usuario-info {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-taller .btn-logout {
+    background-color: #E2E8F0;
+    color: var(--azul-marino);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: background-color 0.2s;
+}
+
+.header-taller .btn-logout:hover {
+    background-color: var(--gris-concreto-borde);
+}
+.navbar-principal {
+    background-color: var(--azul-marino);
+    width: 100%;
+}
+
+.container-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.navbar-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.navbar-principal a {
+    display: block;
+    color: #A0AEC0;
+    text-decoration: none;
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.navbar-principal a:hover,
+.navbar-principal a.active {
+    color: var(--blanco-puro);
+    background-color: var(--azul-hover);
+}
+
+.contenedor-layout {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 1.5rem auto;
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+}
+.contenido-dashboard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.dashboard-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.dashboard-header p {
+    color: var(--gris-texto);
+    font-size: 0.9rem;
+}
+
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+}
+
+.tarjeta-card {
+    background-color: var(--blanco-puro);
+    border: 1px solid var(--gris-concreto-borde);
+    border-radius: 6px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.tarjeta-card .card-icon {
+    font-size: 2rem;
+    background-color: var(--gris-concreto-fondo);
+    padding: 0.5rem;
+    border-radius: 6px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.tarjeta-card .card-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.tarjeta-card .card-info p {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gris-texto);
+}
+
+.tarjeta-card .card-info small {
+    display: block;
+    font-size: 0.75rem;
+    color: #718096;
+    margin-top: 0.2rem;
+}
+
+.seccion-tabla-resumen {
+    background-color: var(--blanco-puro);
+    border: 1px solid var(--gris-concreto-borde);
+    border-radius: 6px;
+    padding: 1.5rem;
+}
+
+.seccion-tabla-resumen h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--gris-concreto-fondo);
+    padding-bottom: 0.5rem;
+}
+
+.tabla-placeholder {
+    background-color: var(--gris-concreto-fondo);
+    border: 1px dashed var(--gris-concreto-borde);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 4px;
+    color: var(--gris-texto);
+    font-size: 0.9rem;
+}
+.menu-vertical-derecho {
+    width: 280px;
+    background-color: var(--blanco-puro);
+    border: 1px solid var(--gris-concreto-borde);
+    border-radius: 6px;
+    padding: 1.5rem;
+    align-self: flex-start;
+}
+
+.menu-vertical-derecho h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1.5px solid var(--azul-marino);
+}
+
+.grupo-botones-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.btn-menu-lateral {
+    width: 100%;
+    text-align: left;
+    background-color: var(--gris-concreto-fondo);
+    color: var(--azul-marino);
+    border: 1px solid var(--gris-concreto-borde);
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-menu-lateral:hover {
+    background-color: var(--azul-celeste);
+    border-color: var(--azul-marino);
+}
+
+.btn-menu-lateral.btn-destacado {
+    background-color: var(--azul-marino);
+    color: var(--blanco-puro);
+    border: none;
+}
+
+.btn-menu-lateral.btn-destacado:hover {
+    background-color: var(--azul-hover);
+}
+.pie-pagina {
+    background-color: var(--blanco-puro);
+    border-top: 1px solid var(--gris-concreto-borde);
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gris-texto);
+    margin-top: auto;
+}
+
+@media (max-width: 900px) {
+    .contenedor-layout {
+        flex-direction: column;
+    }
+    
+    .menu-vertical-derecho {
+        width: 100%;
+    }
+    
+    .navbar-principal ul {
+        flex-wrap: wrap;
+    }
+    
+    .navbar-principal a {
+        padding: 0.75rem 1rem;
+    }
+}
